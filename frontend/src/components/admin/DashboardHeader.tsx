@@ -34,7 +34,7 @@ export function DashboardHeader({ onMenuClick, title }: DashboardHeaderProps) {
           <input
             type="text"
             placeholder="Rechercher..."
-            className="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-lg leading-5 bg-gray-50 placeholder-gray-400 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0099DC] focus:border-[#0099DC] sm:text-sm transition-colors" />
+            className="w-full bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-500 shadow-sm rounded-xl py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-ureport-blue focus:bg-white transition-colors" />
           
         </div>
 

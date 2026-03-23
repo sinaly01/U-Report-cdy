@@ -40,13 +40,17 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="bg-ureport-blue p-2 rounded-xl group-hover:bg-ureport-gold transition-colors">
-                <Megaphone className="h-6 w-6 text-white" />
+            <Link href="/">
+              <div className="flex items-center gap-2">
+                <div className="flex items-baseline select-none">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-ureport-blue from-50% to-black to-50% font-black text-4xl tracking-tighter">
+                    U
+                  </span>
+                  <span className="text-black font-bold text-3xl ml-1 tracking-tight">
+                    Report
+                  </span>
+                </div>
               </div>
-              <span className="font-heading font-bold text-2xl text-ureport-dark tracking-tight">
-                U-Report <span className="text-ureport-blue">Cocody</span>
-              </span>
             </Link>
           </div>
 

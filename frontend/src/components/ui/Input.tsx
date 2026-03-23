@@ -16,7 +16,7 @@ export function Input({
 }: InputProps) {
   const inputId = id || label.toLowerCase().replace(/\s+/g, '-');
   const baseStyles =
-  'w-full px-4 py-3 rounded-xl border bg-gray-50 focus:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-ureport-blue focus:border-transparent';
+  'w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-gray-900 placeholder-gray-500 shadow-sm focus:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-ureport-blue focus:border-transparent';
   const errorStyles = error ?
   'border-red-500 focus:ring-red-500' :
   'border-gray-200';

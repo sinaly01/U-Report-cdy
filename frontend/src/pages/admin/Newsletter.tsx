@@ -100,7 +100,7 @@ export function Newsletter() {
               </label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0099DC]"
+                className="w-full px-3 py-2 border border-gray-300 text-gray-900 placeholder-gray-500 shadow-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0099DC]"
                 placeholder="Ex: Récapitulatif du mois..." />
               
             </div>

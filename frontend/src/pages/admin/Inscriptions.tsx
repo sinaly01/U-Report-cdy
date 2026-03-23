@@ -77,7 +77,7 @@ export function Inscriptions() {
             <input
               type="text"
               placeholder="Rechercher un participant..."
-              className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0099DC]" />
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 text-gray-900 placeholder-gray-500 shadow-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0099DC]" />
             
           </div>
           <button className="flex items-center justify-center px-4 py-2 border border-gray-200 rounded-lg text-[#64748B] hover:bg-gray-50 transition-colors">

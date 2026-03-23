@@ -14,13 +14,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="bg-ureport-blue p-2 rounded-xl">
-                <Megaphone className="h-6 w-6 text-white" />
-              </div>
-              <span className="font-heading font-bold text-2xl tracking-tight">
-                U-Report <span className="text-ureport-blue">Cocody</span>
-              </span>
+            <div className="flex items-center gap-2 bg-white/95 p-3 rounded-2xl w-fit shadow-sm">
+                <div className="flex items-baseline select-none">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-ureport-blue from-50% to-black to-50% font-black text-4xl tracking-tighter">
+                    U
+                  </span>
+                  <span className="text-black font-bold text-3xl ml-1 tracking-tight">
+                    Report
+                  </span>
+                </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               La voix des jeunes de Cocody. Engagez-vous pour créer un impact
@@ -132,7 +134,7 @@ export function Footer() {
               <input
                 type="email"
                 placeholder="Votre adresse email"
-                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ureport-blue focus:border-transparent" />
+                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/40 text-white placeholder-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-ureport-blue focus:border-transparent" />
               
               <button
                 type="submit"

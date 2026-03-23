@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: hsl(210, 100%, 50%); /* Bleu U-Report */
-  --color-accent: hsl(142, 71%, 45%);   /* Vert */
+  --color-ureport-blue: #0099DC;
+  --color-ureport-dark: #1E293B;
+  --color-ureport-gold: #F5A623;
+  --color-ureport-light: #F0F9FF;
+  --font-heading: 'Inter', sans-serif;
 }
