@@ -1,11 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  FileTextIcon,
-  CalendarIcon,
-  UserPlusIcon,
-  ImageIcon } from
-'lucide-react';
+import { ClockIcon, CheckCircleIcon, PlusCircleIcon, MessageCircleIcon, FileTextIcon, CalendarIcon, UserPlusIcon, ImageIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 const activities = [
 {
   id: 1,
@@ -94,9 +90,9 @@ export function ActivityFeed() {
 
         })}
       </div>
-      <button className="w-full mt-6 py-2 text-sm font-medium text-[#0099DC] hover:text-[#007bb5] transition-colors">
+      <Link to="/admin" className="w-full mt-6 py-2 text-sm font-medium text-[#0099DC] hover:text-[#007bb5] transition-colors block text-center">
         Voir tout l'historique
-      </button>
+      </Link>
     </motion.div>);
 
 }

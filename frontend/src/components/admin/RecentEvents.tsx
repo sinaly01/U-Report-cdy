@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MoreHorizontalIcon, CalendarIcon, MapPinIcon } from 'lucide-react';
+import { MapPinIcon, UsersIcon, ClockIcon, CalendarIcon, MoreHorizontalIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 const events = [
 {
   id: 1,
@@ -81,9 +83,9 @@ export function RecentEvents() {
         <h2 className="text-lg font-bold text-[#1E293B]">
           Événements Récents & À Venir
         </h2>
-        <button className="text-sm font-medium text-[#0099DC] hover:text-[#007bb5] transition-colors">
+        <Link to="/admin/events" className="text-sm font-medium text-[#0099DC] hover:text-[#007bb5] transition-colors">
           Voir tout
-        </button>
+        </Link>
       </div>
 
       <div className="overflow-x-auto flex-1">

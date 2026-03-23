@@ -15,9 +15,10 @@ export function About() {
               <span className="text-ureport-blue">U-Report Cocody</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Nous sommes une communauté dynamique de jeunes engagés pour le
-              développement de la commune de Cocody. Soutenus par l'UNICEF, nous
-              utilisons notre voix pour créer un impact positif.
+              Détachement officiel de U-Report Côte d'Ivoire, notre communauté rassemble 
+              plus de 9 840 jeunes engagés pour le développement de la commune de Cocody. 
+              Soutenus par l'UNICEF, nous promouvons des valeurs fortes telles que l'intégrité, 
+              l'altruisme et le respect de la chose publique.
             </p>
           </div>
         </div>

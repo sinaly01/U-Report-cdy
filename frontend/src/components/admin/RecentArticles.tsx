@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ClockIcon } from 'lucide-react';
+import { Edit3Icon, TrashIcon, PlusIcon, LinkIcon, ClockIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 const articles = [
 {
   id: 1,
@@ -66,9 +67,9 @@ export function RecentArticles() {
       
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-lg font-bold text-[#1E293B]">Derniers Articles</h2>
-        <button className="text-sm font-medium text-[#0099DC] hover:text-[#007bb5] transition-colors">
+        <Link to="/admin/articles" className="text-sm font-medium text-[#0099DC] hover:text-[#007bb5] transition-colors">
           Voir tout
-        </button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

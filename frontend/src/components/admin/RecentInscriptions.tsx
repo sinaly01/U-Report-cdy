@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2Icon } from 'lucide-react';
+import { CheckCircleIcon, XCircleIcon, ClockIcon, CheckCircle2Icon } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 const inscriptions = [
 {
   id: 1,
@@ -66,9 +68,9 @@ export function RecentInscriptions() {
         <h2 className="text-lg font-bold text-[#1E293B]">
           Dernières Inscriptions
         </h2>
-        <button className="text-sm font-medium text-[#0099DC] hover:text-[#007bb5] transition-colors">
+        <Link to="/admin/inscriptions" className="text-sm font-medium text-[#0099DC] hover:text-[#007bb5] transition-colors">
           Voir tout
-        </button>
+        </Link>
       </div>
 
       <div className="space-y-4">

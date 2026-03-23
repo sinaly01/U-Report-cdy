@@ -6,29 +6,36 @@ import {
   HandshakeIcon,
   UsersIcon } from
 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
 const actions = [
 {
   label: 'Créer un événement',
   icon: CalendarPlusIcon,
-  color: '#0099DC'
+  color: '#0099DC',
+  path: '/admin/events'
 },
 {
   label: 'Rédiger un article',
   icon: PenSquareIcon,
-  color: '#6CC24A'
+  color: '#6CC24A',
+  path: '/admin/articles'
 },
 {
   label: 'Ajouter un partenaire',
   icon: HandshakeIcon,
-  color: '#FFC107'
+  color: '#FFC107',
+  path: '/admin/partners'
 },
 {
   label: 'Voir les inscriptions',
   icon: UsersIcon,
-  color: '#8B5CF6'
+  color: '#8B5CF6',
+  path: '/admin/inscriptions'
 }];
 
 export function QuickActions() {
+  const navigate = useNavigate();
   return (
     <motion.div
       initial={{
@@ -50,8 +57,9 @@ export function QuickActions() {
         {actions.map((action, index) => {
           const Icon = action.icon;
           return (
-            <motion.button
+              <motion.button
               key={index}
+              onClick={() => navigate(action.path)}
               whileHover={{
                 scale: 1.02
               }}

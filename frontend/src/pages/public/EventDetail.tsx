@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Calendar,
@@ -14,8 +15,9 @@ import { Button } from '../../components/ui/Button';
 import { Card } from '../../components/ui/Card';
 import { Input } from '../../components/ui/Input';
 import { events } from '../../data/mockData';
-export function EventDetail({ id }: {id: string;}) {
-  const event = events.find((e) => e.id === id);
+export function EventDetail() {
+  const { id } = useParams<{ id: string }>();
+  const event = events.find((e) => String(e.id) === id);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   if (!event) {

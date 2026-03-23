@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import {
   ArrowLeft,
   Calendar,
@@ -7,8 +8,9 @@ import {
 'lucide-react';
 import { Link } from '../../components/public/Link';
 import { articles } from '../../data/mockData';
-export function ArticleDetail({ id }: {id: string;}) {
-  const article = articles.find((a) => a.id === id);
+export function ArticleDetail() {
+  const { id } = useParams<{ id: string }>();
+  const article = articles.find((a) => String(a.id) === id);
   if (!article) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center">

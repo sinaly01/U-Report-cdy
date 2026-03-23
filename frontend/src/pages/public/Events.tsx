@@ -6,9 +6,11 @@ import { Button } from '../../components/ui/Button';
 import { Card } from '../../components/ui/Card';
 import { Input } from '../../components/ui/Input';
 import { events } from '../../data/mockData';
+import { RegistrationModal } from '../../components/public/RegistrationModal';
 export function Events() {
   const [filter, setFilter] = useState<'all' | 'upcoming' | 'past'>('upcoming');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedEvent, setSelectedEvent] = useState<any>(null);
   const filteredEvents = events.filter((event) => {
     const matchesFilter = filter === 'all' || event.status === filter;
     const matchesSearch =
@@ -149,18 +151,18 @@ export function Events() {
                       </div>
                     </div>
 
-                    <Link href={`/events/${event.id}`}>
-                      <Button
-                    fullWidth
-                    variant={
-                    event.status === 'past' ? 'outline' : 'primary'
-                    }>
-                    
-                        {event.status === 'past' ?
-                    'Voir le résumé' :
-                    "S'inscrire"}
-                      </Button>
-                    </Link>
+                    <div className="flex gap-2 mt-auto">
+                      <Link href={`/events/${event.id}`} className={event.status === 'past' ? "flex-1" : "flex-1"}>
+                        <Button fullWidth variant={event.status === 'past' ? 'outline' : 'ghost'} className={event.status === 'past' ? "" : "text-gray-500 hover:text-ureport-blue hover:bg-transparent px-0 font-medium"}>
+                          {event.status === 'past' ? 'Voir le résumé' : 'Détails'}
+                        </Button>
+                      </Link>
+                      {event.status !== 'past' && (
+                        <Button fullWidth variant="primary" className="flex-[2]" onClick={() => setSelectedEvent(event)}>
+                          S'inscrire
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </Card>
               </motion.div>
@@ -188,6 +190,12 @@ export function Events() {
           </div>
         }
       </div>
+
+      <RegistrationModal 
+        isOpen={!!selectedEvent} 
+        onClose={() => setSelectedEvent(null)} 
+        eventTitle={selectedEvent?.title || ''} 
+      />
     </div>);
 
 }

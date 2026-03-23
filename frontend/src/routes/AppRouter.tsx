@@ -34,8 +34,8 @@ const router = createBrowserRouter([
       { path: PATHS.PUBLIC.EVENTS, element: <PublicEvents /> },
       { path: PATHS.PUBLIC.GALLERY, element: <PublicGallery /> },
       { path: PATHS.PUBLIC.ABOUT, element: <About /> },
-      { path: '/articles/:id', element: <ArticleDetail id="placeholder" /> },
-      { path: '/events/:id', element: <EventDetail id="placeholder" /> },
+      { path: '/articles/:id', element: <ArticleDetail /> },
+      { path: '/events/:id', element: <EventDetail /> },
     ]
   },
   {

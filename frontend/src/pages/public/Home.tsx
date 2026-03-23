@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { ArrowRight, Calendar, Users, Heart, Star } from 'lucide-react';
@@ -12,6 +12,7 @@ import {
   partners,
   testimonials } from
 '../../data/mockData';
+import { RegistrationModal } from '../../components/public/RegistrationModal';
 const containerVariants: Variants = {
   hidden: {
     opacity: 0
@@ -39,6 +40,8 @@ const itemVariants: Variants = {
   }
 };
 export function Home() {
+  const [selectedEvent, setSelectedEvent] = useState<any>(null);
+
   const upcomingEvents = events.
   filter((e) => e.status === 'upcoming').
   slice(0, 3);
@@ -200,12 +203,17 @@ export function Home() {
                     <p className="text-gray-600 mb-6 line-clamp-2 text-sm flex-grow">
                       {event.description}
                     </p>
-                    <Link href={`/events/${event.id}`}>
-                      <Button fullWidth variant="outline" className="group">
+                    <div className="flex gap-2 mt-auto">
+                      <Link href={`/events/${event.id}`} className="flex-1">
+                        <Button fullWidth variant="ghost" className="text-gray-500 hover:text-ureport-blue hover:bg-transparent px-0 font-medium">
+                          Détails
+                        </Button>
+                      </Link>
+                      <Button fullWidth variant="outline" className="group flex-[2]" onClick={() => setSelectedEvent(event)}>
                         S'inscrire{' '}
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Button>
-                    </Link>
+                    </div>
                   </div>
                 </Card>
               </motion.div>
@@ -305,7 +313,7 @@ export function Home() {
               
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
                 <img
-                  src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                  src="/photo.jpg"
                   alt="Communauté U-Report"
                   className="w-full h-auto" />
                 
@@ -403,23 +411,40 @@ export function Home() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-16 bg-ureport-light/50 border-y border-ureport-blue/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-bold text-gray-500 uppercase tracking-widest mb-8">
+      <section className="py-16 bg-ureport-light/50 border-y border-ureport-blue/10 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+          <p className="text-center text-sm font-bold text-gray-500 uppercase tracking-widest">
             Ils nous font confiance
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-            {partners.map((partner) =>
-            <img
-              key={partner.id}
-              src={partner.logo}
-              alt={partner.name}
-              className="h-12 md:h-16 object-contain" />
-
-            )}
-          </div>
+        </div>
+        
+        <div className="relative w-full overflow-hidden flex">
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 20
+            }}
+            className="flex items-center gap-16 md:gap-32 px-8 w-max opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-500"
+          >
+            {[...partners, ...partners].map((partner, index) => (
+              <img
+                key={`${partner.id}-${index}`}
+                src={partner.logo}
+                alt={partner.name}
+                className="h-12 md:h-16 w-32 object-contain shrink-0"
+              />
+            ))}
+          </motion.div>
         </div>
       </section>
+
+      <RegistrationModal 
+        isOpen={!!selectedEvent} 
+        onClose={() => setSelectedEvent(null)} 
+        eventTitle={selectedEvent?.title || ''} 
+      />
     </div>);
 
 }

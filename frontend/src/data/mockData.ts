@@ -1,5 +1,5 @@
 export const stats = [
-{ id: 1, label: 'U-Reporters Actifs', value: '5,000+' },
+{ id: 1, label: 'U-Reporters Actifs', value: '9 840+' },
 { id: 2, label: 'Événements Organisés', value: '120+' },
 { id: 3, label: 'Partenaires Locaux', value: '15' },
 { id: 4, label: 'Quartiers Touchés', value: '24' }];
@@ -99,22 +99,22 @@ export const partners = [
 {
   id: 1,
   name: "UNICEF Côte d'Ivoire",
-  logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/UNICEF_Logo.png/800px-UNICEF_Logo.png'
+  logo: 'https://placehold.co/200x200/0099DC/FFFFFF?text=UNICEF'
 },
 {
   id: 2,
   name: 'Mairie de Cocody',
-  logo: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
+  logo: 'https://placehold.co/200x200/0099DC/FFFFFF?text=ALPHA'
 },
 {
   id: 3,
   name: 'Ministère de la Jeunesse',
-  logo: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
+  logo: 'https://placehold.co/200x200/F5A623/FFFFFF?text=MAIRIE'
 },
 {
   id: 4,
   name: 'Croix-Rouge CI',
-  logo: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80'
+  logo: 'https://placehold.co/200x200/1E293B/FFFFFF?text=MINISTERE'
 }];
 
 
