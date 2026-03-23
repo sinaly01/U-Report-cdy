@@ -1,0 +1,163 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import {
+  SearchIcon,
+  DownloadIcon,
+  FilterIcon,
+  CheckCircle2Icon,
+  XCircleIcon } from
+'lucide-react';
+const inscriptions = [
+{
+  id: 1,
+  name: 'Kouassi Jean',
+  email: 'jean.kouassi@email.ci',
+  phone: '+225 0102030405',
+  event: 'Formation en leadership jeune',
+  date: '15 Oct 2024',
+  status: 'Confirmé'
+},
+{
+  id: 2,
+  name: 'Touré Aminata',
+  email: 'atoure99@email.ci',
+  phone: '+225 0506070809',
+  event: 'Campagne de propreté Cocody',
+  date: '14 Oct 2024',
+  status: 'Confirmé'
+},
+{
+  id: 3,
+  name: 'Bamba Seydou',
+  email: 'seydou.b@email.ci',
+  phone: '+225 0708091011',
+  event: 'Journée de sensibilisation',
+  date: '14 Oct 2024',
+  status: 'Annulé'
+},
+{
+  id: 4,
+  name: 'Koffi Marie',
+  email: 'marie.koffi@email.ci',
+  phone: '+225 0123456789',
+  event: 'Formation en leadership jeune',
+  date: '13 Oct 2024',
+  status: 'Confirmé'
+},
+{
+  id: 5,
+  name: 'Diarrassouba Ibrahim',
+  email: 'ib.diarra@email.ci',
+  phone: '+225 0555667788',
+  event: 'Campagne de propreté Cocody',
+  date: '12 Oct 2024',
+  status: 'En attente'
+}];
+
+export function Inscriptions() {
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 20
+      }}
+      animate={{
+        opacity: 1,
+        y: 0
+      }}
+      transition={{
+        duration: 0.4
+      }}
+      className="space-y-6">
+      
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div className="flex gap-2 w-full sm:w-auto">
+          <div className="relative w-full sm:w-80">
+            <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <input
+              type="text"
+              placeholder="Rechercher un participant..."
+              className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0099DC]" />
+            
+          </div>
+          <button className="flex items-center justify-center px-4 py-2 border border-gray-200 rounded-lg text-[#64748B] hover:bg-gray-50 transition-colors">
+            <FilterIcon className="w-5 h-5 sm:mr-2" />
+            <span className="hidden sm:inline">Filtrer</span>
+          </button>
+        </div>
+        <button className="flex items-center space-x-2 bg-white border border-gray-200 text-[#1E293B] px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors whitespace-nowrap w-full sm:w-auto justify-center">
+          <DownloadIcon className="w-5 h-5" />
+          <span>Exporter CSV</span>
+        </button>
+      </div>
+
+      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-gray-50 text-[#64748B] text-xs uppercase tracking-wider border-b border-gray-100">
+                <th className="px-6 py-4 font-medium">Participant</th>
+                <th className="px-6 py-4 font-medium">Contact</th>
+                <th className="px-6 py-4 font-medium">Événement</th>
+                <th className="px-6 py-4 font-medium">Date d'inscription</th>
+                <th className="px-6 py-4 font-medium">Statut</th>
+                <th className="px-6 py-4 font-medium text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {inscriptions.map((user) =>
+              <tr
+                key={user.id}
+                className="hover:bg-gray-50 transition-colors">
+                
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 rounded-full bg-[#0099DC] bg-opacity-10 flex items-center justify-center text-[#0099DC] font-bold text-xs">
+                        {user.name.charAt(0)}
+                        {user.name.split(' ')[1]?.charAt(0)}
+                      </div>
+                      <span className="text-sm font-semibold text-[#1E293B]">
+                        {user.name}
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="text-sm text-[#1E293B]">{user.email}</div>
+                    <div className="text-xs text-[#64748B]">{user.phone}</div>
+                  </td>
+                  <td className="px-6 py-4 text-sm text-[#64748B]">
+                    {user.event}
+                  </td>
+                  <td className="px-6 py-4 text-sm text-[#64748B]">
+                    {user.date}
+                  </td>
+                  <td className="px-6 py-4">
+                    <span
+                    className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${user.status === 'Confirmé' ? 'bg-green-100 text-green-700' : user.status === 'Annulé' ? 'bg-red-100 text-red-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                    
+                      {user.status}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 text-right space-x-2">
+                    <button
+                    className="p-1.5 text-gray-400 hover:text-[#6CC24A] transition-colors rounded-md hover:bg-green-50"
+                    title="Valider">
+                    
+                      <CheckCircle2Icon className="w-4 h-4" />
+                    </button>
+                    <button
+                    className="p-1.5 text-gray-400 hover:text-red-500 transition-colors rounded-md hover:bg-red-50"
+                    title="Annuler">
+                    
+                      <XCircleIcon className="w-4 h-4" />
+                    </button>
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </motion.div>);
+
+}
